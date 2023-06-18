@@ -6,7 +6,7 @@
 */
 
 @font-face {
-  font-family: 'Raleway', "ヒラギノ丸ゴシック ProN";
+  font-family: Raleway, "ヒラギノ丸ゴシック ProN";
   font-style: normal;
   font-weight: 400;
   src: local('Raleway'), url(bIcY3_3JNqUVRAQQRNVteQ.ttf) format('truetype');
@@ -17,7 +17,7 @@ body {
 	margin: 0px;
 	padding: 0;
 	color: #000;
-    font-family: 'Raleway', "ヒラギノ丸ゴシック ProN";
+    font-family: Raleway, "ヒラギノ丸ゴシック ProN";
 	font-size: 100%;
 	line-height: 1.4;
 	background-color: #FFF;
