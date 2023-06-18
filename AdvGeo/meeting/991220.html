@@ -1,0 +1,252 @@
+<!doctype html public "-//w3c//dtd html 4.0 transitional//en">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.7 [en] (Win98; I) [Netscape]">
+<link rel="stylesheet" type="text/css" href="../../noboru-style.css">
+</head>
+<body>
+
+<div align=right><font color="#000000">Noboru Matsuda</font></div>
+
+<h1>
+<font color="#000099">Meeting on AdvGeo (for ITS2000)</font></h1>
+
+<h2>
+<font color="#990000">Introduction should state ...</font></h2>
+
+<ul>
+<li>
+What is the pedagogical problem:&nbsp; Reify a complex problem solving
+strategy.</li>
+</ul>
+
+<ul>
+<li>
+How could such a complex domain be taught?</li>
+</ul>
+
+<ul>
+<ul>
+<li>
+What is backward chain / forward chain (BC/FC)?</li>
+
+<li>
+Basic steps of BC</li>
+
+<ul>
+<li>
+Choose goal G \in Goals &amp; remove G from Goals</li>
+
+<li>
+non deterministically ...</li>
+
+<ul>
+<li>
+match G against the facts in the current state.</li>
+
+<li>
+choose OP whose effect contains G &amp; put preconditions onto Goals</li>
+
+<li>
+if no OP is available, then <b>back-up</b></li>
+</ul>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+Three kinds of trees</li>
+
+<ul>
+<li>
+Search tree (OR tree)</li>
+
+<li>
+Proof tree (AND tree)</li>
+
+<li>
+Partial Problem tree (AND/OR tree)</li>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+What makes the domain difficult to learn</li>
+
+<ul>
+<li>
+nondeterministic procedure -> need search.</li>
+
+<li>
+need to learn cognitive skills to search.</li>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<li>
+Task domain is an advanced geometry theorem proving</li>
+
+<li>
+Best strategy in this domain is BC with some FC at states with new construction.</li>
+</ul>
+
+<ul>
+<ul>
+<li>
+Why BC?&nbsp; ::&nbsp; To construct auxiliary lines.</li>
+
+<li>
+Why FC?&nbsp; ::&nbsp; To select DS with fewest subgoaling.</li>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+GRAMY:&nbsp; better prover than competitors.</li>
+
+<ul>
+<li>
+Has deterministic procedure.</li>
+
+<li>
+Can show students the algorithm for proof.</li>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+To see how FC/BC works, need to check Schiemes et al results.</li>
+</ul>
+</ul>
+
+<ul>
+<li>
+Previous work on Reification of theorem proving search.</li>
+</ul>
+
+<ul>
+<ul>
+<li>
+Anderson &amp; Koedinger display partial problem space</li>
+
+<li>
+Mixing two kinds of trees&nbsp; (AND-tree and OR-tree) ->&nbsp; confusing</li>
+
+<li>
+Too many goals displayed -> dilutes attention</li>
+
+<li>
+Back-up is not clearly reified.</li>
+
+<li>
+... and so on....</li>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+Better to check Marcha Lovett@CMU 's work.</li>
+</ul>
+</ul>
+
+<ul>
+<li>
+Our basic approach.</li>
+</ul>
+
+<ul>
+<ul>
+<li>
+"<i>We will address how to design a learning environment for problem solving
+in a complex domain by reifying the search.</i>"</li>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<ul>
+<li>
+Show minimal information required by algorithm.</li>
+
+<li>
+Use common GUI design elements.</li>
+
+<li>
+.... and so on...</li>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+"<i>All what we need is a search tree so that students can comprehend back-up
+clearly</i>"</li>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+Using the depth-limited search is good for both computer and human being.</li>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<ul>
+<li>
+Saves a computer memory to store states (need only b * d)</li>
+
+<li>
+Help human being to access to the states linearly stored.</li>
+</ul>
+</ul>
+</ul>
+
+<ul>
+<ul>
+<li>
+The approach is general so that it should be applied to other domains which
+need BC as well.</li>
+
+<ul>
+<li>
+e.g.,&nbsp; Proof tutor @ CMU.</li>
+</ul>
+</ul>
+</ul>
+
+<h2>
+<font color="#990000">Future issues</font></h2>
+
+<ul>
+<li>
+Need a hand out for students to explain how to proof with the algorithm
+implemented in GRAMY</li>
+
+<li>
+Need to use depth limited search</li>
+
+<ul>
+<li>
+Since GRAMY does know the depth of a proof, it can offer students with
+the depth of cutoff.</li>
+</ul>
+</ul>
+
+<hr WIDTH="100%">
+<div align=right>Last modified: December 20, 1999</div>
+
+</body>
+</html>

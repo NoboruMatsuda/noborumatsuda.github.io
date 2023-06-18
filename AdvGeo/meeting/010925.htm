@@ -1,0 +1,214 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>An early result </title>
+</head>
+
+<body style="font-family: Verdana">
+
+<table border="0" width="100%">
+  <tr>
+    <td width="50%" valign="top">GRAMY meeting memo</td>
+    <td width="50%">
+      <p align="right">9/25/2001<br>
+      Noboru Matsuda</td>
+  </tr>
+</table>
+  <h3><font color="#000080">Review</font> </h3>
+<blockquote>
+  <p>Given a partial match, GRAMY constructs missing segments by the following
+  steps: </p>
+  <ol>
+    <li><font face="Times New Roman">Nondeterministically pickup a missing segment (TS: target segment) with one of the endpoints
+      bound</font></li>
+    <li><font face="Times New Roman">Try all of the following steps to construct TS:</font>
+      <table border="0" cellspacing="10">
+        <tr>
+          <td valign="top" align="right" nowrap><font face="Times New Roman">2-1</font></td>
+          <td>
+            <table border="0" cellspacing="10">
+              <tr>
+                <td valign="top" align="right" nowrap><font face="Times New Roman">If</font></td>
+                <td> <font face="Times New Roman"> both <i> length</i> (i.e., a congruent segment) and <i> direction</i> (i.e., a
+          ray on the TS) of TS is known</font></td>
+              </tr>
+              <tr>
+                <td valign="top" align="right" nowrap><font face="Times New Roman">Then</font></td>
+                <td> <font face="Times New Roman"> extend the ray and copy the segment</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="right" nowrap><font face="Times New Roman">2-2</font></td>
+          <td>
+            <table border="0" cellspacing="10">
+              <tr>
+                <td valign="top" align="right" nowrap><font face="Times New Roman">If</font></td>
+                <td> <font face="Times New Roman"> <i> direction</i> of TS is known &amp;<br>
+                  there exists a third ray passing through
+          the target end point &amp;<br>
+ direction of the third ray is known</font></td>
+              </tr>
+              <tr>
+                <td valign="top" align="right" nowrap><font face="Times New Roman">Then</font></td>
+                <td> <font face="Times New Roman"> plot the target end point as an intersection of those two rays</font></td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top" align="right" nowrap><font face="Times New Roman">2-3</font></td>
+          <td>
+            <table border="0" cellspacing="10">
+              <tr>
+                <td valign="top" align="right"><font face="Times New Roman">If</font></td>
+                <td> <font face="Times New Roman"> <i> length</i> of TS is known</font></td>
+              </tr>
+              <tr>
+                <td valign="top" align="right"><font face="Times New Roman">Then</font></td>
+                <td> <font face="Times New Roman"> try both of the following methods</font>
+                  <table border="0" cellspacing="10">
+                    <tr>
+                <td valign="top" align="right" nowrap><font face="Times New Roman">2-3-1</font></td>
+                <td>
+                  <table border="0" cellspacing="10">
+                    <tr>
+                      <td valign="top" align="right"><font face="Times New Roman">If</font></td>
+                      <td> <font face="Times New Roman"> there exists a third segment sharing the target endpoint
+                        &amp;<br>
+                        its
+              length is known</font></td>
+                    </tr>
+                    <tr>
+                      <td valign="top" align="right"><font face="Times New Roman">Then</font></td>
+                      <td> <font face="Times New Roman"> plot the target endpoint as the intersection of two arcs</font></td>
+                    </tr>
+                  </table>
+                </td>
+                    </tr>
+                    <tr>
+                <td valign="top" align="right" nowrap><font face="Times New Roman">2-3-2</font></td>
+                <td>
+                  <table border="0" width="100%" cellspacing="10">
+                    <tr>
+                      <td valign="top" align="right"><font face="Times New Roman">If</font></td>
+                      <td><font face="Times New Roman">there exists a third ray passing though the target endpoint
+                        &amp;<br>
+                        its direction is known</font></td>
+                    </tr>
+                    <tr>
+                      <td valign="top" align="right"><font face="Times New Roman">Then</font></td>
+                      <td> <font face="Times New Roman"> plot the target endpoint as a point on the third ray away
+              from bound endpoint by the length of the TS</font></td>
+                    </tr>
+                  </table>
+                </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+      </table>
+    </li>
+    <li><font face="Times New Roman">Go to step 1</font></li>
+  </ol>
+</blockquote>
+
+<h3><font color="#000080">&quot;Completeness&quot; of GRAMY</font></h3>
+<blockquote>
+  <p>In general, there exist infinite many proofs that contain redundant
+  constructions.&nbsp; Since GRAMY's construction procedure is based on partial
+  match, GRAMY can't find all those redundant proofs.&nbsp; </p>
+  <p>GRAMY is complete in a sense that for all theorems that are satisfiable, it
+  can find a shortest proof.&nbsp; </p>
+</blockquote>
+
+<h3><font color="#000080">Construction with a reference to a free ray</font></h3>
+<blockquote>
+  <p>One must prove that the point constructed by the step 2-3-2 actually
+  exists.&nbsp; GRAMY avoid the proof by taking alternative construction:&nbsp;</p>
+  <table border="0" cellspacing="10">
+    <tr>
+      <td nowrap valign="top" align="right"><font face="Times New Roman">2-3-2'</font></td>
+      <td>
+        <table border="0" cellspacing="10">
+          <tr>
+            <td nowrap valign="top" align="right"><font face="Times New Roman">If</font></td>
+            <td valign="top"><font face="Times New Roman">there exists a third ray passing through the target endpoint
+              &amp;<br>
+              its direction is know</font></td>
+          </tr>
+          <tr>
+            <td nowrap valign="top" align="right"><font face="Times New Roman">Then</font></td>
+            <td valign="top"> <font face="Times New Roman"> plot the target endpoint as a point on the third ray away
+              from bound endpoint by the length of the TS</font></td>
+          </tr>
+          <tr>
+            <td nowrap valign="top" align="right"><font face="Times New Roman">only<br>
+              when</font></td>
+            <td valign="top">
+              <font face="Times New Roman">
+              there exists a free ray that is parallel or perpendicular to&nbsp;TS
+              just constructed</font></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+  <p>The third segment appeared in 2-3-1 is not determined by its
+  direction.&nbsp; Hence, if there exists a free ray that is parallel or
+  perpendicular to the third segment, then the target point is constructed by
+  the same way as 2-3-2'.&nbsp;&nbsp;</p>
+</blockquote>
+<h3><font color="#000080">Not all the possible constructions are found...</font></h3>
+<blockquote>
+  <p>With right-angle triangle-congruent axiom, GRAMY can find this construction
+  by drawing a normal line from E to AD to plot Y and then plot X on AC such
+  that AX = AE.&nbsp; GRAMY can't, however, construct X by dropping a
+  perpendicular from Y to AC.&nbsp; This is because (1) Y is not a part of the
+  partial match, and (2) GRAMY doesn't update the partial match on the fly as
+  the construction proceeds.&nbsp; </p>
+  <p align="center"><span lang="EN-US" style="font-size:10.5pt;mso-bidi-font-size:
+12.0pt;font-family:&quot;Times New Roman&quot;;mso-fareast-font-family:&quot;&#65325;&#65331; &#26126;&#26397;&quot;;
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:JA;
+mso-bidi-language:AR-SA"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_i1025" type="#_x0000_t75" style='width:298.5pt;
+ height:137.25pt'>
+ <v:imagedata src="file:///C:/tmp/msoclip1/01/clip_image001.png" o:title=""/>
+</v:shape><![endif]-->
+  <img src="0109251.jpg" v:shapes="_x0000_i1025" width="583" height="269"></span></p>
+  <p>Intuitively, this doesn't hurt the completeness for most of the DS have
+  several different sets of sufficient conditions.&nbsp; It hasn't been proven,
+  though. </p>
+</blockquote>
+<hr>
+
+</body>
+
+</html>

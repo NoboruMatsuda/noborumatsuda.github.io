@@ -1,0 +1,190 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 5.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="File-List" href="030806-minutes_files/filelist.xml">
+
+<title>AdvGeo meeting minutes</title>
+<!--[if !mso]>
+<style>
+v\:*         { behavior: url(#default#VML) }
+o\:*         { behavior: url(#default#VML) }
+.shape       { behavior: url(#default#VML) }
+</style>
+<![endif]--><!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body style="font-family: Verdana">
+
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber1">
+  <tr>
+    <td width="50%">AdvGeo meeting<br>
+    Minutes</td>
+    <td width="50%">
+    <p align="right">Noboru Matsuda<br>
+    8/06/2003</td>
+  </tr>
+</table>
+<blockquote>
+  <p><font color="#008080"><b>GUI design</b></font></p>
+  <blockquote>
+  <p><b>Equation Builder:</b></p>
+    <blockquote>
+  <p>Can provide templates for propositions:</p>
+      <blockquote>
+        <p><span>
+        <span style="position: relative; top: 5.0pt"><!--[if gte vml 1]><v:shapetype id="_x0000_t75"
+ coordsize="21600,21600" o:spt="75" o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe"
+ filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="_x0000_s1025" type="#_x0000_t75" style='width:135pt;
+ height:15.75pt'>
+ <v:imagedata src="030806-minutes_files/image001.wmz" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img border=0 width=180 height=21
+src="030806-minutes_files/image002.gif" v:shapes="_x0000_s1025"><![endif]></span><!--[if gte mso 9]><xml>
+        <o:OLEObject Type="Embed" ProgID="Equation.3" ShapeID="_x0000_i1025" DrawAspect="Content" ObjectID="_1121685035">
+        </o:OLEObject>
+        </xml> </span><span style="font-size: 12.0pt">etc.</span><![endif]--></p>
+      </blockquote>
+    </blockquote>
+    <p><b>Backward and Forward chaining</b></p>
+    <blockquote>
+      <p>They might be merged into a single Proof window</p>
+      <table border="1" cellpadding="5" cellspacing="5" style="border-collapse: collapse" bordercolor="#111111" id="AutoNumber2">
+        <tr>
+          <td align="center"><font color="#800080"><b>Line#</b></font></td>
+          <td><font color="#800080"><b>Conclusion</b></font></td>
+          <td><font color="#800080"><b>Justification</b></font></td>
+        </tr>
+        <tr>
+          <td align="center">1</td>
+          <td bgcolor="#F8FECD">AP = BQ</td>
+          <td bgcolor="#F8FECD">Given</td>
+        </tr>
+        <tr>
+          <td align="center">2</td>
+          <td bgcolor="#F8FECD">M mid point</td>
+          <td bgcolor="#F8FECD">Given</td>
+        </tr>
+        <tr>
+          <td align="center">...</td>
+          <td>...</td>
+          <td>...</td>
+        </tr>
+        <tr>
+          <td align="center">10</td>
+          <td>&lt;A = &lt;Q</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center">11</td>
+          <td>&lt;B = &lt;P</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center">12</td>
+          <td>AB = PQ</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr>
+          <td align="center">13</td>
+          <td>^ABC # ^PQR</td>
+          <td>ASA 10, 11, 12</td>
+        </tr>
+        <tr>
+          <td align="center">14</td>
+          <td bgcolor="#F8FECD">&lt;ABC = &lt; PQR</td>
+          <td>Tri-Cong 13</td>
+        </tr>
+      </table>
+      <p>Shaded cells are filled prior to the session</p>
+      <p>Rows with blank the Justification cells represents propositions to be 
+      proved</p>
+      <p>Students can make either forward or backward inferences</p>
+    </blockquote>
+    <p><b>Inference Tree</b></p>
+    <blockquote>
+      <p>Instead of showing &quot;a history of inference,&quot; you can dynamically 
+      display a single inference step at a time.&nbsp; </p>
+      <p>To do so, you can generate a small dialog window with appropriate 
+      contents depends on the inference step.</p>
+      <p>Or, you can build a (pseudo) natural dialogue manager to provide a 
+      conversation to guide problem solving steps.</p>
+      <p>Lisa Scott's paper on Physics tutor might be of help</p>
+      <blockquote>
+        <p><font size="2">Scott, L. A. (2002). Design and assessment of an 
+        interactive physics tutoring environment. Dissertation Abstracts 
+        International Section A: Humanities and Social Sciences, 62(9-A), 2964.</font></p>
+      </blockquote>
+    </blockquote>
+  </blockquote>
+  <p><font color="#008080"><b>Terminology</b></font></p>
+  <blockquote>
+    <p>&quot;articulation&quot; must be &quot;inform&quot;</p>
+    <p>&quot;inquiry&quot; must be &quot;elicit&quot;</p>
+  </blockquote>
+  <p><font color="#008080"><b>Guided Problem-solving</b></font></p>
+  <blockquote>
+    <p>It's equivalent to a model tracing tutor that provides immediate feedback 
+    to prevent students going down a garden path.&nbsp; It is known that such 
+    learning system follows the principle of time-effect trade-off.&nbsp; </p>
+    <p>Hence, we do not need to conduct any experiment on this issue.&nbsp; </p>
+    <p>However, nobody known how the students reach mastery by different 
+    learning strategy (i.e., with or without having experience to go down garden 
+    path).</p>
+  </blockquote>
+  <p><font color="#008080"><b>Research Questions:</b></font></p>
+  <blockquote>
+    <p>Need to break down &quot;better learning&quot; into competences.</p>
+    <blockquote>
+      <p>Cognitive task analysis on students' error required.&nbsp; </p>
+    </blockquote>
+    <p>Target skills</p>
+    <blockquote>
+      <p>diagrammatic schema, strategy (FC/BC), search control (select right 
+      schema, even unconsciously) </p>
+      <p>The tutor can observe students' errors on these target skills.&nbsp; 
+      They can be plotted in a learning curve.</p>
+      <p>Post test may be still useful and interesting, but must be carefully 
+      designed so that it actually identify these skills</p>
+    </blockquote>
+  </blockquote>
+  <p><font color="#008080"><b>Next step:</b></font></p>
+  <blockquote>
+    <p>Refine GUI</p>
+    <blockquote>
+      <p>May want to ask other people.</p>
+    </blockquote>
+    <p>Cognitive task analysis to identify target competences</p>
+    <blockquote>
+      <p>Also design tests and see if van Hiele test can be used</p>
+    </blockquote>
+    <p>Make more specific research questions and hypothesis that can be 
+    manipulated in a control condition</p>
+  </blockquote>
+  <p>&nbsp;</p>
+</blockquote>
+
+</body>
+
+</html>

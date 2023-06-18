@@ -1,0 +1,105 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Downloading and installing Advanced Geometry Tutor</title>
+<style type="text/css">
+.auto-style1 {
+	margin-left: 40px;
+}
+.auto-style2 {
+	color: #FF0000;
+}
+</style>
+</head>
+
+<body style="font-family: Century Gothic">
+
+<p><font color="#3333FF" size="4"><b>Downloading and installing Advanced 
+Geometry Tutor</b></font></p>
+<blockquote>
+	<p><span lang="ja">If you are interested, Advanced Geometry Tutor (AGT) is 
+	available for an academic use. </span></p>
+	<p><span lang="ja">Unfortunately, though, AGT is not initially developed for 
+	a wide distribution, and you would need a heck of knowledge in running LISP 
+	and Java programs as well as tuning the run-time environment variables 
+	involved in the software package. </span></p>
+	<p><span lang="ja">AGT is written in LISP and Java. </span></p>
+	<blockquote>
+		<p><span lang="ja">AGT.class is the Java class to run the tutor 
+		interface (GUI).</span></p>
+		<p><span lang="ja">LISP modules are for the core modules of the tutor.&nbsp;&nbsp; 
+		To run the LISP modules, we need to have 
+		<a href="http://www.franz.com/downloads/">Allegro Common Lisp 6.2</a> or 
+		other compatible versions. </span></p>
+		<p><span lang="ja">You need to have a Lisp module and a Java module running 
+		at the same time to run AGT. The Lisp and Java modules 
+		communicate each other through a socket stream channel.</span></p>
+	</blockquote>
+	<p><font color="#008080"><b><span lang="ja">Downloading files</span></b></font></p>
+	<blockquote>
+		<p><span lang="ja">The entire AGT modules are distributed as two ZIP'd 
+		files</span></p>
+		<blockquote>
+			<p><span lang="ja">download <a href="lisp.zip">lisp.zip</a> (880KB) 
+			and <a href="AGT.zip">AGT.zip</a> (770KB)</span></p>
+		</blockquote>
+	</blockquote>
+	<p><font color="#008080"><b><span lang="ja">Installing files</span></b></font></p>
+	<blockquote>
+		<p class="MsoPlainText">Now, make a folder, say 
+		<span class="auto-style2">AdvGeoTutor</span>, and unzip two files right 
+		underneath. You should have two folders <span class="auto-style2">lisp</span> 
+		and <span class="auto-style2">AGT</span> as 
+		noted below.</p>
+		<p class="MsoPlainText"><font face="Courier New"><span lang="ja">
+		AdvGeoTutor<br>
+		</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AGT<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Java<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lisp<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Perl<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; lisp<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; bat<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; DS<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Log<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; memo<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ...</font></p>
+	</blockquote>
+	<p class="auto-style1">Delete all .fasl files in the &quot;lisp&quot; folder.</p>
+	<p><font color="#008080"><b><span lang="ja">Running AGT</span></b></font></p>
+	<blockquote>
+		<p><span lang="ja">You may need to modify <span class="auto-style2">
+		lisp/gramy.lisp</span>, <span class="auto-style2">AGT/lisp/site.lisp</span>, and 
+		<span class="auto-style2">AGT/lisp/AGT.lisp</span> to specify appropriate parameters. Look for &quot;defparameter&quot; 
+		statements and change the value.&nbsp; For example, if you have the AGT 
+		folder at &quot;C:/MyThesis/AGT&quot; then change (defparameter *AGT-DIR* 
+		&quot;f:/Home/Gramy/AGT/lisp/&quot;) to (defparameter *AGT-DIR* &quot;C:/MyThesis/AGT/lisp/&quot;)</span></p>
+		<blockquote>
+			<p><span lang="ja"><font size="2">(*) If you have trouble compiling 
+			LISP files, then don't even bother compiling them. All what you need is to load boot.lisp.</font></span></p>
+		</blockquote>
+		<p>You may also need to place an absolute path in
+		<span class="auto-style2">boot.lisp</span></p>
+		<p>Open AllegroCL and change the default package from 
+		COMMON-GRAPHICS-USER to COMMON-LISP-USER</p>
+		<p><span lang="ja">To run the Lisp part, you need to just load AGT/lisp/boot.lisp, 
+		and run (AGT:start-AGT-server) from the LISP interpreter. Notice the 
+		parentheses (why, it's LISP!). </span></p>
+		<p>Modify <span class="auto-style2">commanager.java</span> to use a
+		<span class="auto-style2">localhost</span> instead of 
+		vanlehn22.lrdc.pitt.edu.&nbsp; Recompile commanager.java</p>
+		<p><span lang="ja">After launching the AGT-server (from the List 
+		interpreter), you need to launch the AGT interface, by just 
+		double-clicking AGT/Java/AGT.html</span></p>
+	</blockquote>
+	<p><b><font color="#008080"><span lang="ja">Questinos?</span></font></b></p>
+	<blockquote>
+		<p><span lang="ja">Send email to Noboru!! (Noboru.Matsuda[at]cs.cmu.edu)</span></p>
+	</blockquote>
+</blockquote>
+<p align="right"><span lang="ja"><font size="2">Last modified:
+<!--webbot bot="Timestamp" S-Type="EDITED" S-Format="%B %d, %Y %I:%M:%S %p" startspan -->December 02, 2010 05:54:10 PM<!--webbot bot="Timestamp" endspan i-checksum="55795" --></font></span></p>
+
+</body>
+
+</html>

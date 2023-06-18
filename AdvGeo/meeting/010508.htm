@@ -1,0 +1,96 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>GRAMY meeting</title>
+</head>
+
+<body style="font-family: Verdana">
+
+<table border="0" width="100%">
+  <tr>
+    <td width="50%" valign="top" bgcolor="#FFFFC4"><font color="#008000">GRAMY meeting</font></td>
+    <td width="50%" bgcolor="#FFFFC4">
+      <p align="right"><font color="#008000">May 8, 2001<br>
+      Noboru Matsuda</font></td>
+  </tr>
+</table>
+<h4><font color="#000080">Discussed with GRAMY-04.doc (version 4/16/01)</font></h4>
+<h4><font color="#000080">Construction procedure must be revised</font></h4>
+<ul>
+  <li>Implement more general set of construction operators as follows:</li>
+</ul>
+<blockquote>
+  <ol>
+    <li>Drop perpendicular to a given ray from a given point.</li>
+    <li>Copy a given distance onto a given ray</li>
+    <li>Copy a given triangle</li>
+    <li>Extend given lines to meet</li>
+    <li>Draw a line parallel to a given line through a given point</li>
+    <li>Plot a mid point to a given segment.</li>
+  </ol>
+  <blockquote>
+    <p>Those generalized operators might make the readers easier to convince &quot;sufficiency&quot; of the
+    construction operators used in GRAMY.</p>
+  </blockquote>
+</blockquote>
+<ul>
+  <li>Implement two different procedures for construction and see if they work:</li>
+</ul>
+<blockquote>
+  <p>(A) a brute force forward construction</p>
+  <blockquote>
+    <ol>
+      <li>Exhaustive FC to quiescence</li>
+      <li>non-deterministically apply construction operators shown above
+        (observe branching factors)</li>
+      <li>Exhaustive FC (observe # successive constructions)</li>
+    </ol>
+  </blockquote>
+  <p>(B) a &quot;constrained&quot; construction</p>
+  <blockquote>
+    <ol>
+      <li>Exhaustive FC to quiescence</li>
+      <li>non-deterministically apply construction operators shown above</li>
+      <li>rule out constructions that don't meet the constraints: (observe
+        branching factors)
+        <ul>
+          <li>DS configuration totally matches with new figure</li>
+          <li>DS conditions are either unify fact or are quantitatively true in
+            new figure</li>
+        </ul>
+      </li>
+      <li>Exhaustive FC&nbsp; (observe # successive constructions)</li>
+    </ol>
+  </blockquote>
+</blockquote>
+<h4><font color="#000080">Other concerns</font></h4>
+<ul>
+    <li>We can't say GRAMY could find <i>all possible constructions</i>, because
+      there might be infinitely many redundant constructions.&nbsp; However, for
+      educational purpose, we can claim that we only allow students to draw
+      constructions with a fixed complexity.</li>
+    <li>Multiple constructions shouldn't run out of memory.&nbsp; -- will try it
+      again</li>
+    <li># correct constructions must be reported</li>
+    <li># construction problems currently appeared in the paper is too
+      small.&nbsp;&nbsp; Can make construction problems?&nbsp; Can find more
+      problems?&nbsp; How about contact with Prof. Seimiya (this is the expert
+      to make construction problems I mentioned in the meeting).</li>
+    <li>Current GRAMY's construction procedure is cognitively black-boxed.&nbsp;
+      Do we need cognitive model or can we go ahead with the black-box model
+      might be another issue we should concern to design ITS.</li>
+</ul>
+<hr>
+<p>© Noboru Matsuda</p>
+
+<p align="right"><!--webbot bot="Timestamp" S-Type="EDITED"
+S-Format="%y/%m/%d %H:%M:%S %Z" startspan -->01/05/08 17:08:42 -0400<!--webbot bot="Timestamp" endspan i-checksum="33170" -->
+</p>
+
+</body>
+
+</html>

@@ -1,0 +1,1401 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:st1="urn:schemas-microsoft-com:office:smarttags"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=shift_jis">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 5.0">
+<meta name=Originator content="Microsoft Word 10">
+<link rel=File-List href="PatternOfStudentAndHintStrategy_files/filelist.xml">
+<link rel=Edit-Time-Data
+href="PatternOfStudentAndHintStrategy_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
+<title>Pattern of Student’s Input and Hint Strategy</title>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="date"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="City"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceType"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="PlaceName"/>
+<o:SmartTagType namespaceuri="urn:schemas-microsoft-com:office:smarttags"
+ name="place"/>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Noboru Matsuda</o:Author>
+  <o:Template>Technical Report</o:Template>
+  <o:LastAuthor>Noboru Matsuda</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>284</o:TotalTime>
+  <o:LastPrinted>2002-10-02T20:11:00Z</o:LastPrinted>
+  <o:Created>2003-03-20T21:56:00Z</o:Created>
+  <o:LastSaved>2003-03-20T21:56:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>280</o:Words>
+  <o:Characters>1602</o:Characters>
+  <o:Lines>13</o:Lines>
+  <o:Paragraphs>3</o:Paragraphs>
+  <o:CharactersWithSpaces>1879</o:CharactersWithSpaces>
+  <o:Version>10.3501</o:Version>
+ </o:DocumentProperties>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:AttachedTemplate HRef="C:\Home\mazda\Doc\lib\Word\Technical Report.dot"></w:AttachedTemplate>
+  <w:PunctuationKerning/>
+  <w:DrawingGridHorizontalSpacing>5.25 pt</w:DrawingGridHorizontalSpacing>
+  <w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery>
+  <w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery>
+  <w:Compatibility>
+   <w:SpaceForUL/>
+   <w:BalanceSingleByteDoubleByteWidth/>
+   <w:DoNotLeaveBackslashAlone/>
+   <w:ULTrailSpace/>
+   <w:DoNotExpandShiftReturn/>
+   <w:AdjustLineHeightInTable/>
+   <w:UseFELayout/>
+  </w:Compatibility>
+  <w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel>
+ </w:WordDocument>
+</xml><![endif]--><!--[if !mso]><object
+ classid="clsid:38481807-CA0E-42D2-BF39-B33AF135CC4D" id=ieooui></object>
+<style>
+st1\:*{behavior:url(#ieooui) }
+</style>
+<![endif]-->
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-alt:"MS Mincho";
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"ＭＳ ゴシック";
+	panose-1:2 11 6 9 7 2 5 8 2 4;
+	mso-font-alt:"MS Gothic";
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:Century;
+	panose-1:2 4 6 4 5 5 5 2 3 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:647 0 0 0 159 0;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:536871559 0 0 0 415 0;}
+@font-face
+	{font-family:"\@ＭＳ ゴシック";
+	panose-1:2 11 6 9 7 2 5 8 2 4;
+	mso-font-charset:128;
+	mso-generic-font-family:modern;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+@font-face
+	{font-family:"\@ＭＳ 明朝";
+	panose-1:2 2 6 9 4 2 5 8 3 4;
+	mso-font-charset:128;
+	mso-generic-font-family:roman;
+	mso-font-pitch:fixed;
+	mso-font-signature:-1610612033 1757936891 16 0 131231 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-parent:"";
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA}
+h1
+	{mso-style-next:Normal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l0 level1 lfo1;
+	tab-stops:list 21.25pt;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"ＭＳ ゴシック";
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;
+	font-weight:normal;}
+h2
+	{mso-style-next:Normal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:28.35pt;
+	text-indent:-28.35pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:2;
+	mso-list:l0 level2 lfo1;
+	tab-stops:list 28.35pt;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"ＭＳ ゴシック";
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;
+	font-weight:normal;}
+h3
+	{mso-style-next:Normal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:35.45pt;
+	text-indent:-35.45pt;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:3;
+	mso-list:l0 level3 lfo1;
+	tab-stops:list 35.45pt;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"ＭＳ ゴシック";
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;
+	font-weight:normal;}
+h4
+	{mso-style-next:Normal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:20.0pt;
+	mso-margin-top-alt:auto;
+	mso-para-margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	mso-para-margin-left:4.0gd;
+	mso-pagination:widow-orphan;
+	page-break-after:avoid;
+	mso-outline-level:4;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	tab-stops:center 212.6pt right 425.2pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	mso-pagination:widow-orphan;
+	tab-stops:center 212.6pt right 425.2pt;
+	layout-grid-mode:char;
+	font-size:10.0pt;
+	mso-bidi-font-size:12.0pt;
+	font-family:"Times New Roman";
+	mso-fareast-font-family:"ＭＳ 明朝";
+	mso-bidi-font-family:"Times New Roman";
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-next:Subtitle;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:1;
+	font-size:14.0pt;
+	mso-bidi-font-size:16.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"ＭＳ ゴシック";
+	mso-bidi-font-family:Arial;
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;}
+p.MsoSubtitle, li.MsoSubtitle, div.MsoSubtitle
+	{mso-style-next:Normal;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
+	margin-left:0in;
+	text-align:center;
+	mso-pagination:widow-orphan;
+	mso-outline-level:2;
+	font-size:12.0pt;
+	font-family:Arial;
+	mso-fareast-font-family:"ＭＳ ゴシック";
+	mso-bidi-font-family:Arial;
+	mso-font-kerning:1.0pt;
+	mso-bidi-language:AR-SA;}
+ /* Page Definitions */
+ @page
+	{mso-page-border-surround-header:no;
+	mso-page-border-surround-footer:no;}
+@page Section1
+	{size:612.1pt 792.1pt;
+	margin:56.7pt 56.7pt 70.9pt 56.7pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:14.2pt;
+	mso-header:url("PatternOfStudentAndHintStrategy_files/header.htm") h1;
+	mso-footer:url("PatternOfStudentAndHintStrategy_files/header.htm") f1;
+	mso-paper-source:0;
+	layout-grid:18.0pt;}
+div.Section1
+	{page:Section1;}
+@page Section2
+	{size:612.1pt 792.1pt;
+	margin:56.7pt 56.7pt 70.9pt 56.7pt;
+	mso-header-margin:42.55pt;
+	mso-footer-margin:14.2pt;
+	mso-header:url("PatternOfStudentAndHintStrategy_files/header.htm") h1;
+	mso-footer:url("PatternOfStudentAndHintStrategy_files/header.htm") f1;
+	mso-paper-source:0;
+	layout-grid:18.0pt;}
+div.Section2
+	{page:Section2;}
+ /* List Definitions */
+ @list l0
+	{mso-list-id:1621959862;
+	mso-list-template-ids:-809857606;}
+@list l0:level1
+	{mso-level-style-link:"Heading 1";
+	mso-level-tab-stop:21.25pt;
+	mso-level-number-position:left;
+	margin-left:21.25pt;
+	text-indent:-21.25pt;}
+@list l0:level2
+	{mso-level-style-link:"Heading 2";
+	mso-level-text:"%1\.%2\.";
+	mso-level-tab-stop:28.35pt;
+	mso-level-number-position:left;
+	margin-left:28.35pt;
+	text-indent:-28.35pt;}
+@list l0:level3
+	{mso-level-style-link:"Heading 3";
+	mso-level-text:"%1\.%2\.%3\.";
+	mso-level-tab-stop:35.45pt;
+	mso-level-number-position:left;
+	margin-left:35.45pt;
+	text-indent:-35.45pt;}
+@list l0:level4
+	{mso-level-text:"%1\.%2\.%3\.%4\.";
+	mso-level-tab-stop:42.55pt;
+	mso-level-number-position:left;
+	margin-left:42.55pt;
+	text-indent:-42.55pt;}
+@list l0:level5
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.";
+	mso-level-tab-stop:49.6pt;
+	mso-level-number-position:left;
+	margin-left:49.6pt;
+	text-indent:-49.6pt;}
+@list l0:level6
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.";
+	mso-level-tab-stop:56.7pt;
+	mso-level-number-position:left;
+	margin-left:56.7pt;
+	text-indent:-56.7pt;}
+@list l0:level7
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.";
+	mso-level-tab-stop:63.8pt;
+	mso-level-number-position:left;
+	margin-left:63.8pt;
+	text-indent:-63.8pt;}
+@list l0:level8
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.";
+	mso-level-tab-stop:70.9pt;
+	mso-level-number-position:left;
+	margin-left:70.9pt;
+	text-indent:-70.9pt;}
+@list l0:level9
+	{mso-level-text:"%1\.%2\.%3\.%4\.%5\.%6\.%7\.%8\.%9\.";
+	mso-level-tab-stop:77.95pt;
+	mso-level-number-position:left;
+	margin-left:77.95pt;
+	text-indent:-77.95pt;}
+-->
+</style>
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Century}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin-top:auto;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:auto;
+	mso-para-margin-left:0in;
+	mso-pagination:widow-orphan;
+	font-size:10.0pt;
+	font-family:Century;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+  <o:rules v:ext="edit">
+   <o:r id="V:Rule106" type="connector" idref="#_x0000_s1378">
+    <o:proxy start="" idref="#_x0000_s1374" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1375" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule107" type="connector" idref="#_x0000_s1379">
+    <o:proxy start="" idref="#_x0000_s1374" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1376" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule108" type="connector" idref="#_x0000_s1380">
+    <o:proxy start="" idref="#_x0000_s1374" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1377" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule109" type="connector" idref="#_x0000_s1369">
+    <o:proxy start="" idref="#_x0000_s1365" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1366" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule110" type="connector" idref="#_x0000_s1370">
+    <o:proxy start="" idref="#_x0000_s1365" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1367" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule111" type="connector" idref="#_x0000_s1371">
+    <o:proxy start="" idref="#_x0000_s1365" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1368" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule112" type="connector" idref="#_x0000_s1360">
+    <o:proxy start="" idref="#_x0000_s1356" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1357" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule113" type="connector" idref="#_x0000_s1361">
+    <o:proxy start="" idref="#_x0000_s1356" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1358" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule114" type="connector" idref="#_x0000_s1362">
+    <o:proxy start="" idref="#_x0000_s1356" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1359" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule115" type="connector" idref="#_x0000_s1351">
+    <o:proxy start="" idref="#_x0000_s1347" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1348" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule116" type="connector" idref="#_x0000_s1352">
+    <o:proxy start="" idref="#_x0000_s1347" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1349" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule117" type="connector" idref="#_x0000_s1353">
+    <o:proxy start="" idref="#_x0000_s1347" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1350" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule118" type="connector" idref="#_x0000_s1342">
+    <o:proxy start="" idref="#_x0000_s1338" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1339" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule119" type="connector" idref="#_x0000_s1343">
+    <o:proxy start="" idref="#_x0000_s1338" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1340" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule120" type="connector" idref="#_x0000_s1344">
+    <o:proxy start="" idref="#_x0000_s1338" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1341" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule121" type="connector" idref="#_x0000_s1333">
+    <o:proxy start="" idref="#_x0000_s1329" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1330" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule122" type="connector" idref="#_x0000_s1334">
+    <o:proxy start="" idref="#_x0000_s1329" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1331" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule123" type="connector" idref="#_x0000_s1335">
+    <o:proxy start="" idref="#_x0000_s1329" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1332" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule124" type="connector" idref="#_x0000_s1387">
+    <o:proxy start="" idref="#_x0000_s1383" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1384" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule125" type="connector" idref="#_x0000_s1388">
+    <o:proxy start="" idref="#_x0000_s1383" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1385" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule126" type="connector" idref="#_x0000_s1389">
+    <o:proxy start="" idref="#_x0000_s1383" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1386" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule128" type="connector" idref="#_x0000_s1392">
+    <o:proxy start="" idref="#_x0000_s1386" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1391" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule130" type="connector" idref="#_x0000_s1393">
+    <o:proxy start="" idref="#_x0000_s1386" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1390" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule131" type="connector" idref="#_x0000_s1400">
+    <o:proxy start="" idref="#_x0000_s1396" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1397" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule133" type="connector" idref="#_x0000_s1402">
+    <o:proxy start="" idref="#_x0000_s1396" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1399" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule135" type="connector" idref="#_x0000_s1406">
+    <o:proxy start="" idref="#_x0000_s1397" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1403" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule136" type="connector" idref="#_x0000_s1421">
+    <o:proxy start="" idref="#_x0000_s1418" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1419" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule137" type="connector" idref="#_x0000_s1422">
+    <o:proxy start="" idref="#_x0000_s1418" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1420" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule138" type="connector" idref="#_x0000_s1424">
+    <o:proxy start="" idref="#_x0000_s1419" connectloc="4"/>
+    <o:proxy end="" idref="#_x0000_s1423" connectloc="0"/>
+   </o:r>
+   <o:r id="V:Rule139" type="arc" idref="#_x0000_s1431"/>
+  </o:rules>
+ </o:shapelayout></xml><![endif]-->
+<!--[if gte mso 9]>
+<xml><o:shapedefaults v:ext="edit" spidmax="1027"/>
+</xml><![endif]-->
+</head>
+
+<body lang=EN-US style='tab-interval:42.0pt;text-justify-trim:punctuation'>
+
+<div class=Section1 style='layout-grid:18.0pt'>
+
+<p class=MsoTitle>Patterns of Students’ Input and Hint Strategies</p>
+
+<p class=MsoSubtitle><st1:place><st1:PlaceName>Noboru</st1:PlaceName> 
+<st1:PlaceName>Matsuda</st1:PlaceName><br>
+<st1:PlaceType>University</st1:PlaceType></st1:place> of <st1:City><st1:place>Pittsburgh</st1:place></st1:City><br>
+<st1:date Month="9" Day="30" Year="2002">September 30, 2002</st1:date></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Status ID</p>
+  </td>
+  <td width=120 valign=bottom style='width:89.85pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Student Input</p>
+  </td>
+  <td width=188 valign=bottom style='width:141.05pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Target of Hint / H-GOMS</p>
+  </td>
+  <td width=200 valign=bottom style='width:150.0pt;border:solid windowtext 1.0pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;mso-border-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>Example</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>C1PaL1<o:p></o:p></p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group id="_x0000_s1372"
+ editas="canvas" style='width:73.5pt;height:54pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2784,2031" coordsize="3332,2592">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shapetype id="_x0000_t75" coordsize="21600,21600" o:spt="75"
+  o:preferrelative="t" path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+  <v:stroke joinstyle="miter"/>
+  <v:formulas>
+   <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+   <v:f eqn="sum @0 1 0"/>
+   <v:f eqn="sum 0 0 @1"/>
+   <v:f eqn="prod @2 1 2"/>
+   <v:f eqn="prod @3 21600 pixelWidth"/>
+   <v:f eqn="prod @3 21600 pixelHeight"/>
+   <v:f eqn="sum @0 0 1"/>
+   <v:f eqn="prod @6 1 2"/>
+   <v:f eqn="prod @7 21600 pixelWidth"/>
+   <v:f eqn="sum @8 21600 0"/>
+   <v:f eqn="prod @7 21600 pixelHeight"/>
+   <v:f eqn="sum @10 21600 0"/>
+  </v:formulas>
+  <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+  <o:lock v:ext="edit" aspectratio="t"/>
+ </v:shapetype><v:shape id="_x0000_s1373" type="#_x0000_t75" style='position:absolute;
+  left:2784;top:2031;width:3332;height:2592' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1374" style='position:absolute;left:4212;top:2463;
+  width:476;height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1375" style='position:absolute;left:3498;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1376" style='position:absolute;left:4212;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1377" style='position:absolute;left:4926;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:shapetype id="_x0000_t32" coordsize="21600,21600" o:spt="32" o:oned="t"
+  path="m,l21600,21600e" filled="f">
+  <v:path arrowok="t" fillok="f" o:connecttype="none"/>
+  <o:lock v:ext="edit" shapetype="t"/>
+ </v:shapetype><v:shape id="_x0000_s1378" type="#_x0000_t32" style='position:absolute;
+  left:3736;top:2967;width:714;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt"/>
+ <v:shape id="_x0000_s1379" type="#_x0000_t32" style='position:absolute;left:4450;
+  top:2967;width:1;height:792' o:connectortype="straight" strokeweight="1pt"/>
+ <v:shape id="_x0000_s1380" type="#_x0000_t32" style='position:absolute;left:4450;
+  top:2967;width:714;height:792' o:connectortype="straight" strokeweight="1pt"/>
+</v:group><![endif]--><![if !vml]><img width=98 height=72
+src="PatternOfStudentAndHintStrategy_files/image001.gif" v:shapes="_x0000_s1372 _x0000_s1373 _x0000_s1374 _x0000_s1375 _x0000_s1376 _x0000_s1377 _x0000_s1378 _x0000_s1379 _x0000_s1380"><![endif]></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt'><i>A
+  subgoal is complete hence no hint needed.<o:p></o:p></i></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:0in;layout-grid-mode:char'><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;height:62.55pt'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal>C1P0</p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group
+ id="_x0000_s1363" editas="canvas" style='width:73.5pt;height:54pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2784,2031" coordsize="3332,2592">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1364" type="#_x0000_t75" style='position:absolute;left:2784;
+  top:2031;width:3332;height:2592' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1365" style='position:absolute;left:4212;top:2463;
+  width:476;height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1366" style='position:absolute;left:3498;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1367" style='position:absolute;left:4212;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1368" style='position:absolute;left:4926;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:shape id="_x0000_s1369" type="#_x0000_t32" style='position:absolute;left:3736;
+  top:2967;width:714;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1370" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:1;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1371" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:714;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=98 height=72
+src="PatternOfStudentAndHintStrategy_files/image002.gif" v:shapes="_x0000_s1363 _x0000_s1364 _x0000_s1365 _x0000_s1366 _x0000_s1367 _x0000_s1368 _x0000_s1369 _x0000_s1370 _x0000_s1371"><![endif]></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Premises</p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>AW-*(P→C)<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>AP-*(P→C)</span></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>Only observed as SPSS or Why (i.e.,
+  the tutor asked the student to prove a step used without justification).</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:3;height:62.55pt'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal>C0Ps</p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group
+ id="_x0000_s1354" editas="canvas" style='width:73.5pt;height:54pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2784,2031" coordsize="3332,2592">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1355" type="#_x0000_t75" style='position:absolute;left:2784;
+  top:2031;width:3332;height:2592' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1356" style='position:absolute;left:4212;top:2463;
+  width:476;height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1357" style='position:absolute;left:3498;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1358" style='position:absolute;left:4212;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1359" style='position:absolute;left:4926;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:shape id="_x0000_s1360" type="#_x0000_t32" style='position:absolute;left:3736;
+  top:2967;width:714;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1361" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:1;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1362" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:714;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=98 height=72
+src="PatternOfStudentAndHintStrategy_files/image003.gif" v:shapes="_x0000_s1354 _x0000_s1355 _x0000_s1356 _x0000_s1357 _x0000_s1358 _x0000_s1359 _x0000_s1360 _x0000_s1361 _x0000_s1362"><![endif]></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Premises</p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+  margin-left:17.15pt;margin-bottom:.0001pt'><span style='font-family:"Courier New"'>AW-*(P→C)<o:p></o:p></span></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:62.55pt'>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:0in;layout-grid-mode:char'><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:4;height:2.0in'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:2.0in'>
+  <p class=MsoNormal>C0P1</p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:2.0in'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group
+ id="_x0000_s1345" editas="canvas" style='width:73.5pt;height:54pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2784,2031" coordsize="3332,2592">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1346" type="#_x0000_t75" style='position:absolute;left:2784;
+  top:2031;width:3332;height:2592' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1347" style='position:absolute;left:4212;top:2463;
+  width:476;height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1348" style='position:absolute;left:3498;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1349" style='position:absolute;left:4212;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1350" style='position:absolute;left:4926;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:shape id="_x0000_s1351" type="#_x0000_t32" style='position:absolute;left:3736;
+  top:2967;width:714;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1352" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:1;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1353" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:714;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=98 height=72
+src="PatternOfStudentAndHintStrategy_files/image004.gif" v:shapes="_x0000_s1345 _x0000_s1346 _x0000_s1347 _x0000_s1348 _x0000_s1349 _x0000_s1350 _x0000_s1351 _x0000_s1352 _x0000_s1353"><![endif]></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:2.0in'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>The last premise</p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>AW-*(P→C)<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>PP-*(P)<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>PP-*(c)</span></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:2.0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>208-P2-02: PP-E(P)</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>205-P2-04(2): PP-R(P)</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>209-P4-03(2): PP-R(C)</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>207-P2-01: PP-E(P), AW-P</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>202-P1-01: AW-P</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>203-P1-02: AW-P</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>207-P1-01: AW-P</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>202-P2-02: AW-P(once removed)</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>208-P2-03: AW-P(once removed)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:5;height:1.0in'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt;height:1.0in'>
+  <p class=MsoNormal>C0Pa</p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:1.0in'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group
+ id="_x0000_s1336" editas="canvas" style='width:73.5pt;height:54pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2784,2031" coordsize="3332,2592">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1337" type="#_x0000_t75" style='position:absolute;left:2784;
+  top:2031;width:3332;height:2592' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1338" style='position:absolute;left:4212;top:2463;
+  width:476;height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1339" style='position:absolute;left:3498;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1340" style='position:absolute;left:4212;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1341" style='position:absolute;left:4926;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:shape id="_x0000_s1342" type="#_x0000_t32" style='position:absolute;left:3736;
+  top:2967;width:714;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1343" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:1;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1344" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:714;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=98 height=72
+src="PatternOfStudentAndHintStrategy_files/image005.gif" v:shapes="_x0000_s1336 _x0000_s1337 _x0000_s1338 _x0000_s1339 _x0000_s1340 _x0000_s1341 _x0000_s1342 _x0000_s1343 _x0000_s1344"><![endif]></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:1.0in'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Conclusion</p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>AW-*(P→C)<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>AC-*(P→C)<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:17.3pt;layout-grid-mode:char'><span style='font-family:"Courier New"'>PP-*(C)</span></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt;height:1.0in'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>208-P1-04: PP-P(P)</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>205-P2-04(1): AW-P(P→C)</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>205-P2-04(3): AC-R(C)</p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in;layout-grid-mode:char'>209-P4-03(1): AC-W(C)</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:6'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal>C1Pa</p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group
+ id="_x0000_s1327" editas="canvas" style='width:73.5pt;height:54pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2784,2031" coordsize="3332,2592">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1328" type="#_x0000_t75" style='position:absolute;left:2784;
+  top:2031;width:3332;height:2592' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1329" style='position:absolute;left:4212;top:2463;
+  width:476;height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1330" style='position:absolute;left:3498;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1331" style='position:absolute;left:4212;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1332" style='position:absolute;left:4926;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:shape id="_x0000_s1333" type="#_x0000_t32" style='position:absolute;left:3736;
+  top:2967;width:714;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1334" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:1;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1335" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:714;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=98 height=72
+src="PatternOfStudentAndHintStrategy_files/image006.gif" v:shapes="_x0000_s1327 _x0000_s1328 _x0000_s1329 _x0000_s1330 _x0000_s1331 _x0000_s1332 _x0000_s1333 _x0000_s1334 _x0000_s1335"><![endif]></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Link
+  (justification) </p>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:0in;
+  margin-left:17.15pt;margin-bottom:.0001pt'><span style='font-family:"Courier New"'>AW-*(P→C)<o:p></o:p></span></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:3.0pt;
+  margin-left:0in;layout-grid-mode:char'><o:p>&nbsp;</o:p></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:7'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;layout-grid-mode:
+  char'><span style='font-size:8.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;layout-grid-mode:
+  char'><span style='font-size:8.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;layout-grid-mode:
+  char'><span style='font-size:8.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;layout-grid-mode:
+  char'><span style='font-size:8.0pt'><o:p>&nbsp;</o:p></span></p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:8;mso-yfti-lastrow:yes'>
+  <td width=74 valign=top style='width:55.45pt;border:solid windowtext 1.0pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;mso-border-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group
+ id="_x0000_s1429" editas="canvas" style='width:36.75pt;height:27pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="3974,5120" coordsize="2499,1852">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1430" type="#_x0000_t75" style='position:absolute;left:3974;
+  top:5120;width:2499;height:1852' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:shapetype id="_x0000_t19" coordsize="21600,21600" o:spt="19"
+  adj="-5898240,,,21600,21600" path="wr-21600,,21600,43200,,,21600,21600nfewr-21600,,21600,43200,,,21600,21600l,21600nsxe"
+  filled="f">
+  <v:formulas>
+   <v:f eqn="val #2"/>
+   <v:f eqn="val #3"/>
+   <v:f eqn="val #4"/>
+  </v:formulas>
+  <v:path arrowok="t" o:extrusionok="f" gradientshapeok="t" o:connecttype="custom"
+   o:connectlocs="0,0;21600,21600;0,21600"/>
+  <v:handles>
+   <v:h position="@2,#0" polar="@0,@1"/>
+   <v:h position="@2,#1" polar="@0,@1"/>
+  </v:handles>
+ </v:shapetype><v:shape id="_x0000_s1431" type="#_x0000_t19" style='position:absolute;
+  left:4963;top:4845;width:1235;height:1785;rotation:90;flip:x'>
+  <v:stroke endarrow="block"/>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=51 height=37
+src="PatternOfStudentAndHintStrategy_files/image007.gif" v:shapes="_x0000_s1429 _x0000_s1430 _x0000_s1431"><![endif]></p>
+  </td>
+  <td width=120 valign=top style='width:89.85pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'>Conclusion<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1:
+  mentioned <o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0:
+  not mentioned<o:p></o:p></span></p>
+  </td>
+  <td width=188 valign=top style='width:141.05pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt 92.95pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'>Premises<span style='mso-tab-count:1'>&nbsp; </span><o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>a:
+  All mentioned<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1:
+  All but one mentioned<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>s:
+  Some mentioned<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0:
+  None mentioned<span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></p>
+  </td>
+  <td width=200 valign=top style='width:150.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  mso-border-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'>Link<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt 25.35pt 35.65pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>1:
+  mentioned<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;tab-stops:22.4pt;
+  layout-grid-mode:char;mso-layout-grid-align:none'><span style='font-size:
+  8.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>0:
+  not mentioned<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;layout-grid-mode:
+  char;mso-layout-grid-align:none'><i><span style='font-size:8.0pt'>Since link
+  can’t mentioned alone, L0 is omitted in the table.</span><o:p></o:p></i></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+</div>
+
+<span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"ＭＳ 明朝";mso-bidi-font-family:"Times New Roman";
+mso-font-kerning:1.0pt;mso-ansi-language:EN-US;mso-fareast-language:JA;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always;
+mso-break-type:section-break'>
+</span>
+
+<div class=Section2 style='layout-grid:18.0pt'>
+
+<p class=MsoNormal><b><span style='font-size:12.0pt;font-family:Arial'>Some Control
+Strategies<o:p></o:p></span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;mso-yfti-tbllook:480;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0'>
+  <td width=134 valign=top style='width:100.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
+ <v:stroke joinstyle="miter"/>
+ <v:path gradientshapeok="t" o:connecttype="rect"/>
+</v:shapetype><v:shape id="_x0000_s1414" type="#_x0000_t202" style='position:absolute;
+ margin-left:36.75pt;margin-top:6.75pt;width:21pt;height:27pt;z-index:12;
+ mso-wrap-style:none' filled="f" stroked="f">
+ <v:textbox>
+<p class="MsoNormal"><span style="font-size:9.0pt">A<o:p></o:p></span></p>
+ </v:textbox>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:12;left:177px;top:938px;width:32px;height:40px'><img width=32
+height=40 src="PatternOfStudentAndHintStrategy_files/image008.gif"
+alt="Text Box: A&#13;&#10;" v:shapes="_x0000_s1414"></span><![endif]><![if !mso]><![endif]><![if !mso]><![endif]><p><![if !mso & !vml]>&nbsp;<![endif]></p>
+<!--[if gte vml 1]><v:group
+ id="_x0000_s1381" editas="canvas" style='width:84pt;height:90pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2784,2031" coordsize="3808,4320">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1382" type="#_x0000_t75" style='position:absolute;left:2784;
+  top:2031;width:3808;height:4320' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1383" style='position:absolute;left:4212;top:2463;
+  width:476;height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1384" style='position:absolute;left:3498;top:3759;width:476;
+  height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1385" style='position:absolute;left:4212;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1386" style='position:absolute;left:4926;top:3759;width:476;
+  height:504' filled="f" fillcolor="silver"/>
+ <v:shape id="_x0000_s1387" type="#_x0000_t32" style='position:absolute;left:3736;
+  top:2967;width:714;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1388" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:1;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1389" type="#_x0000_t32" style='position:absolute;
+  left:4450;top:2967;width:714;height:792' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:oval id="_x0000_s1390" style='position:absolute;left:4450;top:5055;
+  width:476;height:504' fillcolor="silver"/>
+ <v:oval id="_x0000_s1391" style='position:absolute;left:5402;top:5055;width:476;
+  height:504' fillcolor="silver"/>
+ <v:shape id="_x0000_s1392" type="#_x0000_t32" style='position:absolute;left:5164;
+  top:4263;width:476;height:792' o:connectortype="straight" strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1393" type="#_x0000_t32" style='position:absolute;
+  left:4688;top:4263;width:476;height:792;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1415" type="#_x0000_t202" style='position:absolute;
+  left:5418;top:3217;width:925;height:1296;mso-wrap-style:none' filled="f"
+  stroked="f">
+  <v:textbox>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal"><span style="font-size:9.0pt">B<o:p></o:p></span></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=112 height=120
+src="PatternOfStudentAndHintStrategy_files/image009.gif" v:shapes="_x0000_s1381 _x0000_s1382 _x0000_s1383 _x0000_s1384 _x0000_s1385 _x0000_s1386 _x0000_s1387 _x0000_s1388 _x0000_s1389 _x0000_s1390 _x0000_s1391 _x0000_s1392 _x0000_s1393 _x0000_s1415"><![endif]></p>
+  </td>
+  <td width=420 valign=top style='width:315.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Prefer bottom subgoal (or FC)</b> (208-P1-04)</p>
+  <p class=MsoNormal style='margin-left:16.7pt'>Treat this as C0Pa for B, instead
+  of C0Ps for A.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:1;height:150.75pt'>
+  <td width=134 valign=top style='width:100.35pt;padding:0in 5.4pt 0in 5.4pt;
+  height:150.75pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:shape
+ id="_x0000_s1411" type="#_x0000_t202" style='position:absolute;margin-left:38.25pt;
+ margin-top:6.75pt;width:21pt;height:27pt;z-index:11;mso-wrap-style:none;
+ mso-position-horizontal-relative:text;mso-position-vertical-relative:text'
+ filled="f" stroked="f">
+ <v:textbox>
+<p class="MsoNormal"><span style="font-size:9.0pt">A<o:p></o:p></span></p>
+ </v:textbox>
+</v:shape><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+absolute;z-index:11;left:179px;top:1094px;width:32px;height:40px'><img
+width=32 height=40 src="PatternOfStudentAndHintStrategy_files/image008.gif"
+alt="Text Box: A&#13;&#10;" v:shapes="_x0000_s1411"></span><![endif]><![if !mso]><![endif]><![if !mso]><![endif]><p><![if !mso & !vml]>&nbsp;<![endif]></p>
+<!--[if gte vml 1]><v:group
+ id="_x0000_s1394" editas="canvas" style='width:84pt;height:90pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2678,4780" coordsize="1680,1800">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1395" type="#_x0000_t75" style='position:absolute;left:2678;
+  top:4780;width:1680;height:1800' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1396" style='position:absolute;left:3308;top:4960;
+  width:210;height:210' filled="f" fillcolor="silver">
+  <v:textbox style='mso-next-textbox:#_x0000_s1396'>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal">
+      <o:p>&nbsp;</o:p></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:oval><v:oval id="_x0000_s1397" style='position:absolute;left:2993;top:5500;
+  width:210;height:210' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1399" style='position:absolute;left:3623;top:5500;width:210;
+  height:210' filled="f" fillcolor="silver"/>
+ <v:shape id="_x0000_s1400" type="#_x0000_t32" style='position:absolute;left:3098;
+  top:5170;width:315;height:330;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1402" type="#_x0000_t32" style='position:absolute;
+  left:3413;top:5170;width:315;height:330' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:oval id="_x0000_s1403" style='position:absolute;left:2993;top:6040;
+  width:210;height:210' fillcolor="silver"/>
+ <v:shape id="_x0000_s1406" type="#_x0000_t32" style='position:absolute;left:3098;
+  top:5710;width:1;height:330' o:connectortype="straight" strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1412" type="#_x0000_t202" style='position:absolute;
+  left:2709;top:5274;width:408;height:540;mso-wrap-style:none' filled="f"
+  stroked="f">
+  <v:textbox>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal"><span style="font-size:9.0pt">B<o:p></o:p></span></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1413" type="#_x0000_t202" style='position:absolute;
+  left:3833;top:5320;width:408;height:540;mso-wrap-style:none' filled="f"
+  stroked="f">
+  <v:textbox>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal"><span style="font-size:9.0pt">C<o:p></o:p></span></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=112 height=120
+src="PatternOfStudentAndHintStrategy_files/image010.gif" v:shapes="_x0000_s1394 _x0000_s1395 _x0000_s1396 _x0000_s1397 _x0000_s1399 _x0000_s1400 _x0000_s1402 _x0000_s1403 _x0000_s1406 _x0000_s1412 _x0000_s1413"><![endif]></p>
+  </td>
+  <td width=420 valign=top style='width:315.3pt;padding:0in 5.4pt 0in 5.4pt;
+  height:150.75pt'>
+  <p class=MsoNormal><b>Compound subgoals</b> (205-P2-04)</p>
+  <p class=MsoNormal style='margin-left:16.7pt'>Subgoal B is at C0Pa</p>
+  <p class=MsoNormal style='margin-left:16.7pt'>After completing B, the subgoal
+  A becomes C0P1, hence a hint on C is desired.</p>
+  <p class=MsoNormal style='margin-left:16.7pt'>After completing C, the subgoal
+  A becomes C0Pa.</p>
+  </td>
+ </tr>
+ <tr style='mso-yfti-irow:2;mso-yfti-lastrow:yes'>
+  <td width=134 valign=top style='width:100.35pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><!--[if gte vml 1]><v:group
+ id="_x0000_s1416" editas="canvas" style='width:84pt;height:90pt;
+ mso-position-horizontal-relative:char;mso-position-vertical-relative:line'
+ coordorigin="2678,4780" coordsize="1680,1800">
+ <o:lock v:ext="edit" aspectratio="t"/>
+ <v:shape id="_x0000_s1417" type="#_x0000_t75" style='position:absolute;left:2678;
+  top:4780;width:1680;height:1800' o:preferrelative="f">
+  <v:fill o:detectmouseclick="t"/>
+  <v:path o:extrusionok="t" o:connecttype="none"/>
+  <o:lock v:ext="edit" text="t"/>
+ </v:shape><v:oval id="_x0000_s1418" style='position:absolute;left:3308;top:4960;
+  width:210;height:210' filled="f" fillcolor="silver">
+  <v:textbox style='mso-next-textbox:#_x0000_s1418'>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal">
+      <o:p>&nbsp;</o:p></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:oval><v:oval id="_x0000_s1419" style='position:absolute;left:2993;top:5500;
+  width:210;height:210' filled="f" fillcolor="silver"/>
+ <v:oval id="_x0000_s1420" style='position:absolute;left:3623;top:5500;width:210;
+  height:210' fillcolor="silver"/>
+ <v:shape id="_x0000_s1421" type="#_x0000_t32" style='position:absolute;left:3098;
+  top:5170;width:315;height:330;flip:x' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1422" type="#_x0000_t32" style='position:absolute;
+  left:3413;top:5170;width:315;height:330' o:connectortype="straight"
+  strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:oval id="_x0000_s1423" style='position:absolute;left:2993;top:6040;
+  width:210;height:210' filled="f" fillcolor="silver"/>
+ <v:shape id="_x0000_s1424" type="#_x0000_t32" style='position:absolute;left:3098;
+  top:5710;width:1;height:330' o:connectortype="straight" strokeweight="1pt">
+  <v:stroke dashstyle="1 1"/>
+ </v:shape><v:shape id="_x0000_s1425" type="#_x0000_t202" style='position:absolute;
+  left:2709;top:5274;width:408;height:540;mso-wrap-style:none' filled="f"
+  stroked="f">
+  <v:textbox>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal"><span style="font-size:9.0pt">B<o:p></o:p></span></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1427" type="#_x0000_t202" style='position:absolute;
+  left:3413;top:4780;width:423;height:540;mso-wrap-style:none' filled="f"
+  stroked="f">
+  <v:textbox>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal"><span style="font-size:9.0pt">A<o:p></o:p></span></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape><v:shape id="_x0000_s1428" type="#_x0000_t202" style='position:absolute;
+  left:2678;top:5860;width:408;height:540;mso-wrap-style:none' filled="f"
+  stroked="f">
+  <v:textbox>
+<![if !mso]>
+<table cellpadding="0" cellspacing="0" width="100%">
+  <tr>
+    <td><![endif]>
+    <div>
+      <p class="MsoNormal"><span style="font-size:9.0pt">C<o:p></o:p></span></p>
+    </div>
+    <![if !mso]></td>
+  </tr>
+</table>
+<![endif]></v:textbox>
+ </v:shape></v:group><![endif]--><![if !vml]><img width=114 height=122
+src="PatternOfStudentAndHintStrategy_files/image011.gif" v:shapes="_x0000_s1416 _x0000_s1417 _x0000_s1418 _x0000_s1419 _x0000_s1420 _x0000_s1421 _x0000_s1422 _x0000_s1423 _x0000_s1424 _x0000_s1425 _x0000_s1427 _x0000_s1428"><![endif]></p>
+  </td>
+  <td width=420 valign=top style='width:315.3pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal><b>Prefer meaningful highlighting</b> (202-P2-02)</p>
+  <p class=MsoNormal style='margin-left:15.5pt'>Provide a hint on B and C [possibly
+  AW-P(C→B), which is once removed from the subgoal A] when highlighting
+  subgoal A [C0P1] doesn’t make much sense, for example, A is derived by
+  transitive substitution.<span style='mso-spacerun:yes'>&nbsp; </span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
+
+</div>
+
+<p class="MsoNormal"><font face="Verdana">
+<img border="0" src="../../../img/PDF-small.gif" width="19" height="17"><a href="PatternOfStudentAndHintStrategy.pdf">PatternOfStudentAndHintStrategy.pdf</a></font></p>
+
+</body>
+
+</html>

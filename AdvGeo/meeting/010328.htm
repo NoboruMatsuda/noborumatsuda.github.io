@@ -1,0 +1,168 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>&#26032;&#12375;&#12356;&#12506;&#12540;&#12472; 2</title>
+</head>
+
+<body style="font-family: Verdana">
+
+<table border="0" width="100%">
+  <tr>
+    <td width="50%">GRAMY meeting</td>
+    <td width="50%">
+      <p align="right">March 28, 2001</td>
+  </tr>
+  <tr>
+    <td width="100%" colspan="2">
+      <p align="right">Noboru Matsuda</td>
+  </tr>
+</table>
+<h3><font color="#008000">On GRAMY paper (first draft)</font></h3>
+<table border="0" width="100%" cellspacing="5">
+  <tr>
+    <td width="0">+</td>
+    <td bgcolor="#E6FFFF"><font color="#000080"><b>Divide the paper into two</b></font>&nbsp;</td>
+  </tr>
+  <tr>
+    <td width="0"></td>
+    <td>
+      <table border="0" width="100%" cellspacing="5">
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>GRAMY architecture
+            <ul>
+              <li>Heuristic-free search works given sufficient operators</li>
+              <li>GRAMY is complete modular to the macro operators.</li>
+              <li>No need to mention a great detail of the search complexities
+                (possibly about mean time for search).</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>Analysis of search space in terms of estimated complexity of
+            search and problem space.
+            <ul>
+              <li>Branching factor</li>
+              <li>ratio of deductive closure in a proof to the number of
+                deductive closures made by forward chaining.</li>
+            </ul>
+            <p>Might be an interesting contribution to ITS</p>
+            <ul>
+              <li>Koedinger's GPT and CMU proof tutor would be a source for
+                comparison: how complex their problem space are?</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="0">+</td>
+    <td bgcolor="#E6FFFF"><font color="#000080"><b>About construction procedure</b></font></td>
+  </tr>
+  <tr>
+    <td width="0"></td>
+    <td>
+      <table border="0" width="100%" cellspacing="5">
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>Primitive operators are (1) draw lines, (2) set compass between
+            two points, and (3) draw an arc</td>
+        </tr>
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>Macro operators are for efficiency.
+            <ul>
+              <li>Notice, however, that a search for construction that only uses
+                primitive operators is extremely complex.&nbsp;&nbsp;</li>
+              <li>This is due to the fact that one can't afford knowing
+                propositions that are embedded into macro operators.</li>
+              <li>To infer those propositions, one must construct lines that are
+                not necessarily appeared in macro operators.</li>
+              <li>(See note on p.17 of the draft-03)</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>Need to clarify the procedure of construction
+            <ul>
+              <li>Input: a partial match</li>
+              <li>Output: a complete match</li>
+              <li>How is the search involved?</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>Completeness&nbsp;
+            <ul>
+              <li>Describe the situation under which the construction fails.</li>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>What are the complete set of macro operators for construction?</td>
+        </tr>
+        <tr>
+          <td width="0%" valign="top"></td>
+          <td></td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+  <tr>
+    <td width="0">+</td>
+    <td bgcolor="#E6FFFF"><b><font color="#000080">Comparison with Koedinger's
+      DC</font></b></td>
+  </tr>
+  <tr>
+    <td width="0"></td>
+    <td>
+      <table border="0" width="100%" cellspacing="5">
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>They share the same structure (informational equivalent)</td>
+        </tr>
+        <tr>
+          <td width="0%" valign="top">*</td>
+          <td>They differ in a way to be used in search
+            <ul>
+              <li>KK use only the conclusion (&quot;whole&quot; statement) for
+                backward chain.</li>
+              <li>GRAMY use both conclusion and premises for backward chain.</li>
+            </ul>
+            <p>(See note)</td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<h3><font color="#008000">Todo</font></h3>
+<ul>
+  <li>Send Kurt docs about the conference on theorem proving (it's not actually
+    conference on GEOMETRY stuff).
+    <ul>
+      <li>Some abstracts of the related papers.</li>
+    </ul>
+  </li>
+  <li><a href="http://www.cs.albany.edu/~nvm/cade.html">Conference on Automated
+    Deduction</a>
+    <ul>
+      <li><a href="http://www.cs.cmu.edu/~cade/">17th conference at CMU (2000)</a></li>
+    </ul>
+  </li>
+</ul>
+<hr>
+<p align="right">Noboru Matsuda</p>
+<p>&nbsp;</p>
+
+</body>
+
+</html>

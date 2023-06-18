@@ -1,0 +1,173 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-2">
+<meta http-equiv="Content-Language" content="en-us">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<title>GRAMY meeting minutes</title>
+</head>
+
+<body style="font-family: Verdana">
+
+<table border="0" width="100%">
+  <tr>
+    <td width="50%" valign="top">GRAMY meeting minutes</td>
+    <td width="50%">
+      <p align="right">9/25/2001<br>
+      Noboru Matsuda</td>
+  </tr>
+</table>
+<h3><font color="#000080">Issues around &quot;completeness&quot;</font></h3>
+<blockquote>
+  <p><u><font color="#000080">Definition of Construction</font></u></p>
+  <blockquote>
+    <p>&quot;Construction&quot; could be defined either by <i>points</i> or by <i>segments</i>
+    constructed.</p>
+    <blockquote>
+      <p>If it's point that determines a construction, then two constructions
+      with the same set of points but differ in the segments connecting them
+      would be considered as identical.&nbsp; </p>
+    </blockquote>
+    <p>&quot;Constructions&quot; with the same configuration could be treated as
+    either the <i>same</i> or the <i>different</i> constructions depending on
+    the order of points (hence segments) constructed.</p>
+    <p>&quot;Constructions&quot; with the same configuration drawn in the same
+    way could be treated as the <i>same</i> or the <i>different</i>
+    constructions depending on the constraints (or assertions if you will)
+    associated with the construction.&nbsp; </p>
+    <blockquote>
+      <table border="0">
+        <tr>
+          <td valign="top" nowrap>For example, </td>
+          <td>draw segment AB as a perpendicular to XY to prove a goal G by
+            showing AB // EF
+            <p align="center">vs.</p>
+            <p>draw segment AB to be parallel to EF to prove a goal G by showing
+            AB is a perpendicular to XY</td>
+        </tr>
+      </table>
+    </blockquote>
+  </blockquote>
+  <p><u><font color="#000080">&quot;Redundancy&quot; of construction</font></u></p>
+  <blockquote>
+    <p>Is it true that GRAMY can find all the proofs with a construction such
+    that all the element (could be only points) are referred in a proof?</p>
+    <p>Or, can you make an arbitrarily complicated (or redundant)
+    construction?&nbsp; -- Don't think about constructions with transitive substitutions,
+    because GRAMY can deal with them.&nbsp;&nbsp;</p>
+  </blockquote>
+  <p><u><font color="#000080">Object of Completeness</font></u></p>
+  <blockquote>
+    <table border="0" cellspacing="10">
+      <tr>
+        <td valign="top" nowrap align="right">All proofs -- </td>
+        <td valign="top">GRAMY could be &quot;complete&quot; in a sense that it
+          can generate all the possible proofs.</td>
+      </tr>
+      <tr>
+        <td valign="top" nowrap align="right">Same proofs --
+        </td>
+        <td valign="top">GRAMY could be &quot;complete&quot; in a sense that it
+          can generate all the &quot;equivalent&quot; proofs, which consider two
+          constructions with different order and/or different constraints as the
+          same constructions.&nbsp;&nbsp;</td>
+      </tr>
+      <tr>
+        <td valign="top" nowrap align="right">Proof all -- </td>
+        <td valign="top">GRAMY could be &quot;complete&quot; in a sense that it
+          can proof all the true theorems.</td>
+      </tr>
+    </table>
+  </blockquote>
+</blockquote>
+
+<h3><font color="#000080">Issues around an ITS design</font></h3>
+<blockquote>
+  <p><u><font color="#000080">Definition vs. Assertion</font></u></p>
+  <blockquote>
+    <p>To construct a new segment or a new point point is to define new object,
+    which is assessed as well-defined or not (they can't be wrong or
+    correct).&nbsp;&nbsp;</p>
+    <p>A proof is composed by a set of assertions inputted, which you can tell
+    true or false.</p>
+  </blockquote>
+  <p><u><font color="#000080">Relevancy of a statement</font></u></p>
+  <blockquote>
+    <p>It is actually an interesting research questions that &quot;do you need
+    to allow students to go down a garden path?&quot;&nbsp;&nbsp;</p>
+    <p>They would certainly learn something from an impasse.&nbsp;&nbsp;</p>
+  </blockquote>
+  <p><u><font color="#000080">Educational objectives</font></u></p>
+  <blockquote>
+    <p>We could teach students geometric concepts, which the teachers claim what
+    they mainly do.</p>
+    <p>We could teach students problem solving (i.e., search) skills for
+    geometry proof, which is what the teachers actually do.&nbsp;</p>
+  </blockquote>
+  <p><u><font color="#000080">Local heuristics vs. abstract plans</font></u></p>
+  <blockquote>
+    <p>To teach problem solving skills (i.e., search), you can either provide
+    students with (1) the local heuristics that tells you which operator to take
+    in what situation, or (2) the abstract plans that tells you how to assemble
+    a solution.&nbsp;&nbsp;</p>
+    <p>Andes-III is intended to provide abstract planning for students to
+    learn.&nbsp;&nbsp;</p>
+    <p>Remember the <i>capillary graph</i> that represent a planning space in
+    the top half and an instantiations of the plan in the bottom half.&nbsp;</p>
+  </blockquote>
+  <p><u><font color="#000080">Model tracing with an &quot;incomplete&quot;
+  solution graph</font></u></p>
+  <blockquote>
+    <p>We are working on a domain with huge solution space that is hardly
+    captured as a solution graph.&nbsp;&nbsp;</p>
+    <table border="0" cellspacing="5" cellpadding="5">
+      <tr>
+        <td nowrap valign="top"></td>
+        <td bgcolor="#FFFF00">
+          <p align="center"><font color="#000080"><b>Feedback</b></font></td>
+        <td bgcolor="#FFFF00">
+          <p align="center"><font color="#000080"><b>Advice at impasse</b></font></td>
+      </tr>
+      <tr>
+        <td nowrap valign="top" bgcolor="#FFFF00"><font color="#000080"><b>All
+          proofs</b></font></td>
+        <td valign="top">Triggered when a true proposition is not relevant to:
+          <ul>
+            <li>any proof, or</li>
+            <li>proof the student is writing</li>
+          </ul>
+        </td>
+        <td valign="top">Discuss what to do when there are multiple proofs
+          <p>Extend the student's proof</td>
+      </tr>
+      <tr>
+        <td nowrap valign="top" bgcolor="#FFFF00"><font color="#000080"><b>Same
+          proofs</b></font></td>
+        <td valign="top">&quot;I can't tell if the construction steps is
+          relevant or not until you complete the construction.&quot;</td>
+        <td valign="top"></td>
+      </tr>
+      <tr>
+        <td nowrap valign="top" bgcolor="#FFFF00"><font color="#000080"><b>Proof
+          all</b></font></td>
+        <td valign="top">Flagged feedback (true or false)
+          <ul>
+            <li>Andes can do this</li>
+            <li>GRAMY without construction can do this</li>
+            <li>GRAMY with construction can't afford to deal with this unless
+              mental reasoning (with construction) is constrained</li>
+          </ul>
+          <p>Can't tell if it's relevant to a proof or not, though.&nbsp;&nbsp;</p>
+          <p>Can tell if a construction is well-formed or not.</td>
+        <td valign="top">&quot;Abandon your proof, then next step in my proof is
+          ...&quot;</td>
+      </tr>
+    </table>
+  </blockquote>
+</blockquote>
+<hr>
+
+</body>
+
+</html>
