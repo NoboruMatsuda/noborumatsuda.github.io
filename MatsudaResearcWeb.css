@@ -13,11 +13,11 @@
 }
 
 @charset "UTF-8";
+/* font-family: 'Raleway'; */
 body {
 	margin: 0px;
 	padding: 0;
 	color: #000;
-	font-family: Raleway;
 	font-size: 100%;
 	line-height: 1.4;
 	background-color: #FFF;
