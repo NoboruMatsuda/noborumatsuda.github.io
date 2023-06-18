@@ -1,0 +1,92 @@
+
+\section{Geometry Theorem Proving}
+
+\subsection{The domain}
+
+In geometry theorem proving, the operators to be applied are geometry
+theorems.  A state is defined by a geometric configuration, the known
+geometric relations (the facts, for short) in the configuration, and a
+goal(s) to prove.  The subjects of state transition are not only the
+facts and the goal, but also the configuration; the configuration is
+changed by a construction.
+
+It is well known that, for geometry theorem proving, forward inference
+works more efficient than backward inference \cite{Nevins75}.  Indeed,
+forward inference suppresses the subgoaling by adding known facts
+without blowing up the inference, because there is no infinite chain of
+forward inference given each single fact is allowed to be asserted once.
+However, it is not easy to realize all the applicable theorems at a
+state, because the problem figure might be complicated enough to hinder
+the students in reading a necessary configuration off the problem
+figure.
+
+Backward inference is not necessarily needed to prove theorems that do
+not require a construction of auxiliary lines.  However, it is needed
+for the theorems that require a construction.  Through the experiments
+with GRAMY, which is introduced in the following section, we have
+observed that most of the auxiliary lines and points can be constructed
+by backward inference.  That is, most constructions are determined by
+partially overlapping a configuration of known theorem against the
+problem figure to see the lacking segments.  However, it is notoriously
+difficult for human beings to retrieve an appropriate theorem from their
+memory to conduct a construction by the partial matching method.  So, we
+need to help students to see how the partial overlapping takes place.
+
+Besides the construction, most importantly for human beings, backward
+inference helps to think in goal oriented way, and it is more natural
+and rational way of reasoning for human beings.  *** ANY CITATION FOR
+THIS CLAIM?  *** As we discussed above, this requires a backing-up
+procedure which is not easy for students to maintain.  
+
+[[ SCHEINES' WORK GIVES ANY SUPPORT HERE? ]]  \cite{Scheines94}
+
+In sum, we need to teach students forward inference to deduce new facts,
+and backward inference to carry out a construction and to maintain a
+goal directed reasoning.  The latter strategy needs backing-up at an
+impasse.  The main difficulties to teach those topics push us to provide
+students with scaffolding on the theorem application, the construction,
+and the backing-up procedure.
+
+\subsection{Practical ITSs on Geometry Theorem Proving}
+
+Many ITSs and CAIs have been developed for geometry theorem proving so
+far, yet no one has developed an ITS to teach auxiliary line
+construction.
+
+\GeometryTutor, one of the earliest geometry ITSs, developed by Anderson
+\textit{et al.}~\cite{Anderson85}, provides students with a GUI where
+the students can build up a partial problem tree.  That is, they can
+build a proof by making a connection between the givens placed at the
+bottom of a screen and the goal placed at the top of the screen.  The
+students can use graphical icons representing the geometric theorems as
+the connector.  They can either hang an icon from a current goal to
+establish new subgoals, or place an icon to hook the known facts on it
+to derive a new fact.  The former corresponds to a backward reasoning,
+and the latter corresponds to a forward reasoning.  It is expected that
+the students can perform bi-directional search naturally as the human
+experts do.  Furthermore, \GeometryTutor\ can provide students with
+hints on theorem application in terms of the structure of a problem
+tree.  However, since it utilized a problem tree as a model of proof, it
+has potential flaws discussed in the previous section.
+
+A recent descendant, \Angle\ \cite{Koedinger93}, extends the tutoring
+capabilities of \GeometryTutor\ by providing the students with a
+diagrammatic representation of the theorems, called the diagrammatic
+configuration schema, instead of the labeled icons used in
+\GeometryTutor.  It actually provides students with a better help in the
+sense of reifying the theorem applications; students could ``see'' how
+to apply theorems.  However, it still uses a partial problem tree in the
+interface with which students conduct a proof.
+
+Several ITSs and CAIs have been developed without explicitly using
+AND/OR trees.  For example, \Cabri\ \cite{CABRI} provides students with
+fully manipulations on the problem configuration.  Students can change
+the shape of the configuration while remaining the certain constraints
+given in the problem.  This facilitates students to explore the
+properties held in the configuration.  By changing a coordinate of the
+apex of an isosceles triangle, for example, the students can see that
+the apex moves on the perpendicular bisector.  Although that kind of
+scaffolding works fairly well, since they do not directly deal with the
+problem-solving strategies, they should be placed as the different kind
+of instructional tools than the one addressed in this paper.
+

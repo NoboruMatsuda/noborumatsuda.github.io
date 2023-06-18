@@ -1,0 +1,161 @@
+
+\section{A Reification of Strategy for Geometry Theorem Proving}
+\label{sec:gw}
+
+\subsection{GRAMY: A Geometry Theorem Prover for Auxiliary Line Problem}
+
+[[ GIVE A BRIEF INTRODUCTION OF GRAMY HERE ]]
+
+
+\subsection{Reification of a Search Tree}
+
+To design a GUI that reifies a search tree, we started with showing each
+state along with the applicable theorems (i.e., DSs), and allow students
+to turn over the states as if they turn the pages each showing a state.
+Figure~\ref{fig:bi}~shows the basic idea.  The left hand side of the
+figure represents a model of proof in GRAMY.  Meanwhile, the right hand
+side of the figure illustrates a screen shot in a geometry learning
+environment.  Each window (called \StateView) corresponds to a single
+node in the search tree (indicated by a dotted line~\texttt{(b)}).  The
+solid window shows the current state and only this window appears on the
+screen.  The other windows drawn by the broken lines, corresponding to
+ancestor states, are disappeared once turned over.  So, the gray thick
+arrow represents chronological progress of a search (indicated by a
+dotted line~\texttt{(a)} associating the pile with several node
+expansions in the search space specified with thicker links).
+
+\begin{figure}[tb]
+ \center
+ \resizebox{\textwidth}{!}{\includegraphics{../../Figure/GramyModel}}
+ \caption{Reified model of geometry proof}
+ \label{fig:bi}
+\end{figure}
+
+Figure~\ref{fig:sv}~is an actual view of \StateView\ taken from a
+computer screen.  It includes the problem figure, the goal to prove, the
+facts deduced so far starting with the given premises, and the
+applicable geometry theorems.  By ``applicable,'' we mean either the
+theorem has a conclusion that matches against the goal (thus, can be
+used for a backward inference), or it has all the premises satisfied
+(thus, it immediately derives a new factual statement).  The goal to
+prove and the known facts are highlighted on the problem figure with
+separate colors.  Observe, in Figure~\ref{fig:sv}, the goal $\angle APQ
+= \angle MQB$, and the two facts $AP = QB$ and $AM = AB$ are all
+highlighted.  When one of the statements (i.e., either the goal or the
+facts) is clicked, corresponding geometric objects are blinking in the
+problem figure.
+
+The applicable DSs are lined up with the iconic representation
+illustrating configuration of corresponding theorem (a dotted line
+\texttt{(d)} in Figure~\ref{fig:bi}).  The experiment of GRAMY running
+on a corpus of non-auxiliary line problems from the literature showed
+that the average branching factor is less than 4.  It supports our
+design policy of using the iconic buttons.  Furthermore, it has also
+been observed that a number of possible constructions with a particular
+DS runs up to 40.  Thus, instead of lining up all the possible
+constructions in \StateView, only the icons of DSs used to determine the
+construction are appeared at the bottom of \StateView.  When those icons
+are clicked, all the constructions determined by the corresponding DS
+appear in a pop-up window.  Figure~\ref{fig:popup}~ shows an example of
+the pop-up window showing possible constructions by the theorem of
+congruent triangles.
+
+\begin{figure}[tb]
+ \center
+ \resizebox{\textwidth}{!}{\includegraphics{../../Image/P116-StateView0+}}
+ \caption{A representation of a proof step.}
+ \label{fig:sv}
+\end{figure}
+
+\begin{figure}[tb]
+ \center
+ \resizebox{.8\textwidth}{!}{\includegraphics{../../Image/P116-PopupDsIcon-0-TriCong}}
+ \caption{An example of DSs in a pop-up window.}
+ \label{fig:popup}
+\end{figure}
+
+A pop-up window is also used for DSs applied by forward inference.
+Since GRAMY applies, in forward inferences, all the applicable DSs at
+once, there might be a number of DSs in those steps.  Then, an existence
+of a forward inference at a state is shown with an icon saying
+``\texttt{FORWARD}.''  (See Figure~\ref{fig:sv}.)
+
+The third kind of icons are for backward inference.  They are lined one
+by one at the bottom of \StateView.
+
+When an icon in a pop-up window or at the bottom of \StateView\ is
+clicked, a configuration of the corresponding theorem is overlapped
+against the problem figure, and the theorem is appeared in a separate
+window, called diagrammatic schema browser (or \DsBrowser\ for short),
+with which students can browse all the geometry theorems.  (See
+Figure~\ref{fig:dsb}.)  \DsBrowser\ shows the sentential expression of a
+theorem together with its configuration.  In Figure~\ref{fig:ov}, an
+application of the theorem of triangle congruent illustlates the
+auxiliary lines overlapping against the problem figure in \StateView.
+
+\begin{figure}[tb]
+ \center
+ \resizebox{\textwidth}{!}{\includegraphics{../../Image/P116-PopupDsIcon-0-TriCong-overlap}}
+ \caption{An example of reified DS application.}
+ \label{fig:ov}
+\end{figure}
+
+In sum, \StateView\ has potential abilities to offer students with the
+following scaffolding per se.
+
+\begin{itemize}
+ \item [(S1)] Each state in a search tree is reified by visualizing a
+       problem figure, goal to be proven, known facts, and applicable
+       theorems (i.e., DSs).
+ \item [(S2)] The successors expanded at each node in the search tree
+       are reified as the clickable icons.  
+ \item [(S3)] An application of a theorem is reified by overlapping a
+       configuration against the problem figure, and also showing
+       sentential expressions in \DsBrowser.  
+ \item [(S4)] Specific to the auxiliary line problems, but construction
+       is reified as an overlapped configuration against the problem
+       figure.  
+\end{itemize}
+
+\begin{figure}[tb]
+ \center
+ \resizebox{\textwidth}{!}{\includegraphics{../../Image/BsBrowser-Ftheory}}
+ \caption{Diagrammatic Schema Browser}
+ \label{fig:dsb}
+\end{figure}
+
+Finally, when an icon is ``selected'' by having a double click on it,
+then the selected icon is highlighted, and a new state is expanded by
+applying the selected DS to the current state (i.e., where the icon is
+clicked).  Then, the contents of \StateView\ are updated accordingly.
+The figure is modified if the applied theorem is for a construction.
+The goal is replaced if the theorem is applied in backward manner.  The
+new facts are added if the icon for forward inference is selected.  
+
+Now, the students can observe how a proof unfolds in \StateView\ by
+keeping to select an applicable DS (i.e., an icon) at each state.  They
+can return to a previous state by clicking the back button on
+\StateView\ (see \fbox{\texttt{Next}} and \fbox{\texttt{Previous}} buttons
+shown in Figure~\ref{fig:sv}).  The number at the right-bottom corner of
+\StateView\ shows a depth of the search.  This way, the students can
+freely explore through a search tree back and forth.
+
+Most importantly, the students are allowed to conduct a depth-limited
+search; that is, they go down a single path in the search tree until
+they hit a cutoff\footnote{The cutoff is determined according to the
+depth of a proof found by GRAMY invoking the iterative-deepening
+search.} or a dead-end.  When they reach a cutoff or a dead-end, no
+applicable DS appears so they know that they are at an impasse.  At that
+point, they can ``back-up'' to a previous state where a selected DS is
+highlighted, and thus they can take another path.
+
+In sum, this state exploration facility provides students with powerful
+scaffolding on learning the problem-solving strategies as follows;
+
+\begin{itemize}
+ \item [(S5)] State expansion is reified as a ``selection'' of an
+       applicable DS.  
+ \item [(S6)] Backing-up is reified as turning over the states in
+       backward way, and selecting an alternative icon.
+\end{itemize}
+

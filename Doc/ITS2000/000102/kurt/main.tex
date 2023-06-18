@@ -1,0 +1,77 @@
+\documentclass[11pt]{article}
+\newif\ifpdf
+\ifx\pdfoutput\undefined
+  \pdffalse
+\else
+  \pdftrue
+\fi
+
+\ifpdf 
+  \usepackage[pdftex]{graphicx}
+\else
+  \usepackage[dvips]{graphicx}
+\fi
+
+\title{
+  \bfseries A Reification of a Strategy for Geometry Theorem Proving
+  }
+
+\author{
+  Noboru Matsuda \\
+  Intelligent Systems Program \\
+  University of Pittsburgh \\
+  \texttt{mazda@isp.pitt.edu}
+  \and
+  Kurt VanLehn\thanks{This research was supported by NSF grant number
+  9720359 to CIRCLE: Center
+  for Interdisciplinary Research on Constructive Learning
+  Environments. \texttt{http://www.pitt.edu/\~{}circle} } \\
+  Learning Research and Development Center \\
+  University of Pittsburgh\\
+  \texttt{vanlehn@cs.pitt.edu}
+  }
+
+\date{
+  3939 O'Hara Street, Pittsburgh, PA 15260 USA\\
+  Ver. 00/01/02 (4100 words)
+  }
+
+\newcommand{\RelatedRatesTutor}{\textsc{Related Rates Tutor}}
+\newcommand{\AlgebraTutor}{\textsc{Algebra Tutor}}
+\newcommand{\GeometryTutor}{\textsc{Geometry Tutor}}
+\newcommand{\Angle}{\textsc{Angle}}
+\newcommand{\Gil}{\textsc{GIL}}
+\newcommand{\Cabri}{\textsc{Cabri Geometry}}
+\newcommand{\ProofTutor}{\textsc{Proof Tutor}}
+\newcommand{\StateView}{\textsc{State View}}
+\newcommand{\DsBrowser}{\textsc{Ds Browser}}
+
+\widowpenalty=10000
+\clubpenalty=10000
+
+\setlength{\textwidth}{6in}
+\setlength{\textheight}{8in}
+\setlength{\oddsidemargin}{0.25in}
+\setlength{\evensidemargin}{0.25in}
+\setlength{\topmargin}{0pt}
+\setlength{\footskip}{.5in}
+%% \renewcommand{\baselinestretch}{1.5}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+ \input{Abstract}
+\end{abstract}
+
+\input{Introduction}
+\input{GeometryITS}
+\input{GramyGUI}
+\input{Discussion}
+\input{Conclusion}
+
+\bibliographystyle{plain}
+\bibliography{a,c,k,l,m,n,p,s}
+
+\end{document}
+

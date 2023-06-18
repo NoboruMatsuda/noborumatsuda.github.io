@@ -1,0 +1,177 @@
+BODY {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; LETTER-SPACING: 0.01em; TEXT-DECORATION: none
+}
+TD {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; LETTER-SPACING: 0.01em; TEXT-DECORATION: none
+}
+TH {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; LETTER-SPACING: 0.01em; TEXT-DECORATION: none
+}
+DIV {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; LETTER-SPACING: 0.01em; TEXT-DECORATION: none
+}
+P {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 16px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; LETTER-SPACING: 0.01em; TEXT-DECORATION: none
+}
+A.body:hover {
+	COLOR: #000000; TEXT-DECORATION: underline
+}
+A:hover {
+	COLOR: #fc3834; TEXT-DECORATION: underline
+}
+.quotemorelink {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #9b000e; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.highlightmorelink {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #5c616a; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.highlighttitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.browsetitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.topicstitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.highlighttext {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.quotetext {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #9b000e; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.alertlink {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #9b000e; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.alertlink2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #9b000e; FONT-FAMILY: Helvetica, Arial, Verdana, sans-serif
+}
+.quotetextbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #9b000e; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.authorquote {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #383e41; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.itemtitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.itemmorelink {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #5c616a; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.itemccsterm {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #6d7682; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.itemccsterm_nu {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #6d7682; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.toplinksgrey {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #6d7682; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.itemccstermblack {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.forumula {
+	FONT-WEIGHT: bold
+}
+.reference {
+	FONT-WEIGHT: bold
+}
+.alertccs {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.reviewtitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.reviewauthor {
+	COLOR: #5c616a
+}
+.reviewjournaltitle {
+	COLOR: #5c616a
+}
+.reviewreviewer {
+	COLOR: #5c616a
+}
+.toolbar {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #5c616a; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.simreviewtitle {
+	COLOR: #5c616a
+}
+.copyright {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: arial
+}
+.copyrightlink {
+	FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: arial
+}
+.searchcitation {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #5c616a; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.searchtitle {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #9b000e; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.alertheader {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #5f6267; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.searchresultcount {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #5c616a; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.searchheader {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.homepagetitlelink {
+	FONT-WEIGHT: bold; COLOR: #000000; TEXT-DECORATION: none
+}
+.headdescrition {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #666666; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+.alerthead {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #565a66; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.textlarge {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #000000; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.text {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; LINE-HEIGHT: 1.3; FONT-FAMILY: Verdana ,Helvetica, Arial, sans-serif
+}
+.qtext {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.greytext {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #9c9c9d; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.greytext2 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #676b6e; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.greytext3 {
+	FONT-WEIGHT: normal; FONT-SIZE: 11px; COLOR: #6d7682; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.greytextbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #676d79; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.greytextbold2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #676d79; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.greytextemail {
+	FONT-WEIGHT: bold; FONT-SIZE: 18px; COLOR: #9c9c9d; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.whitetextbold {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.boldtextwhite {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #ffffff; FONT-FAMILY: Verdana ,Arial, Helvetica, sans-serif
+}
+.greytextlarge {
+	FONT-WEIGHT: bold; FONT-SIZE: 13px; COLOR: #696c73; FONT-FAMILY: Arial, Helvetica, sans-serif
+}
+.greytextsmall {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #58595d; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.textsmall {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.textsmall2 {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #000000; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+.textsmallgrey {
+	FONT-WEIGHT: bold; FONT-SIZE: 11px; COLOR: #676b6e; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
